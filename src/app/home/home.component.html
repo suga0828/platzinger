@@ -1,0 +1,16 @@
+<b>Amigos:</b>
+<ng-container *ngFor="let user of friends; let i = index">
+	<p *ngIf="user.friend">
+		<a routerLink="/conversation/{{ user.uid }}">
+			{{i + 1}}. {{user.nick}} - {{user.email}}
+		</a>
+	</p>
+</ng-container>
+<b>No agregados:</b>
+<ng-container *ngFor="let user of friends; let i = index">
+	<p *ngIf="!user.friend">
+		<a >
+			{{i + 1}}. {{user.nick}} - {{user.email}}	
+		</a>
+	</p>
+</ng-container>

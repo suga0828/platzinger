@@ -1,0 +1,13 @@
+<nav>
+	<ul>
+		<li *ngFor="let chat of chats">
+			<a routerLink="/{{chat.name}}">
+				{{chat.name}}
+			</a>
+		</li>
+	</ul>
+</nav>
+
+<section class="chat">
+	{{ friendId }}
+</section>
