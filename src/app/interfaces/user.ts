@@ -4,5 +4,6 @@ export interface User {
 	age?: number,
 	email: string,
 	friend: boolean,
-	uid: any
+	uid: any,
+	status: string
 }
