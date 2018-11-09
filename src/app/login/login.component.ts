@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+	operation: string = 'login'
 
-  ngOnInit() {
-  }
+	constructor() { }
+
+	ngOnInit() { }
 
 }

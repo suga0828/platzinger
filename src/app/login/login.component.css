@@ -1,0 +1,16 @@
+.loginContainer {
+	background-image: url('/assets/img/msnbg.jpg');
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.avatarFrameOffline {
+
+}
+
+
+.link {
+	font-weight: bold;
+	color: blue !important;
+	cursor: pointer;
+}
