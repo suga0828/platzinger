@@ -1,9 +1,25 @@
-<nav>
-	<img id="brand" src="assets/img/logo_live.png" alt="Platzinger Brand">
-	<a routerLink="/home">
-		<fa-icon [icon]="faCoffee"></fa-icon>
-		Home 
-	</a> |
-	<a routerLink="/login">Login </a> |
-	<a routerLink="/profile">Profile </a> |
+<nav id="menuContainer" class="navbar navbar-expand-lg navbar-light bg-light">
+	<a class="navbar-brand" routerLink="/home">
+		<img id="brand" src="assets/img/logo_live.png" alt="Platzinger Brand">
+		Platzinger
+	</a>
+	<ul class="navbar-nav">
+		<li class="nav-item active">
+			<a routerLink="/profile">
+				Profile
+			</a>
+		</li>
+		<!-- <li class="nav-item">
+			<a routerLink="/login">
+				<fa-icon [icon]="['fab', 'twitter']" size="lg"  flip="both" [pulse]="true"></fa-icon>
+				Login 
+			</a> |
+		</li>
+		<li class="nav-item">
+			<a routerLink="/profile">
+				<fa-icon [icon]="['far', 'calendar']" [fixedWidth]="true" [spin]="isSyncAnimated" (click)="isSyncAnimated=!isSyncAnimated"></fa-icon>
+				Profile
+			</a> |
+		</li> -->
+	</ul>
 </nav>
