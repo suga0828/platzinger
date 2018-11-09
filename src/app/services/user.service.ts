@@ -15,35 +15,40 @@ export class UserService {
 			age: 24,
 			email: 'ed@aoe.aoe',
 			friend: true,
-			uid: 1
+			uid: 1,
+			status: 'online'
 		};
 		let user2: User = {
 			nick: 'Freddy',
 			age: 28,
 			email: 'fred@aoe.aoe',
 			friend: true,
-			uid: 2
+			uid: 2,
+			status: 'offline'
 		};
 		let user3: User = {
 			nick: 'Yuliana',
 			age: 18,
 			email: 'yuli@aoe.aoe',
 			friend: true,
-			uid: 3
+			uid: 3,
+			status: 'busy'
 		};
 		let user4: User = {
 			nick: 'Ricardo',
 			age: 17,
 			email: 'rick@aoe.aoe',
 			friend: false,
-			uid: 4
+			uid: 4,
+			status: 'away'
 		};
 		let user5: User = {
 			nick: 'Marcos',
 			age: 30,
 			email: 'marcos@aoe.aoe',
 			friend: false,
-			uid: 5
+			uid: 5,
+			status: 'online'
 		};
 		this.friends = [user1, user2, user3, user4, user5];
 	
