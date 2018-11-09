@@ -1,0 +1,51 @@
+#conversationContainer {
+  background-image: url(/assets/img/msnbg.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.pt-45 {
+  padding-top: 45px;
+}
+
+.img-friend {
+  top: 0;
+}
+
+.img-me {
+  bottom: 0;
+}
+
+.name {
+}
+
+.conversation {
+  background-color: rgba(55,55,55,.7);
+  color: whitesmoke;
+  min-height: 230px;
+  padding: 10px;
+}
+
+textarea {
+  height: 100px;
+  width: 100%;
+  padding: 10px;
+}
+
+.navbar {
+  padding: 0 !important;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.zumbido {
+  width: 40px;
+  height: 20px;
+}
+
+.custom-file-upload {
+  padding: 3px 6px;
+}
