@@ -20,10 +20,77 @@
 }
 
 .conversation {
-  background-color: rgba(55,55,55,.7);
-  color: whitesmoke;
+  background-image: url(/assets/img/chat-bg.jpg);
+  filter:brightness(0.9);
+  background-size: 40%;
+  background-repeat: repeat-x;
   min-height: 230px;
-  padding: 10px;
+  padding: 10px 20px;
+  overflow: hidden
+}
+
+.friend,
+.own {
+  line-height: 100%;
+  display: block;
+  clear: both;
+  max-width:50%;
+}
+
+.friend {
+    float: left;
+}
+.own {
+    float:right;
+}
+
+/* CSS talk bubble */
+.talk-bubble {
+  margin-bottom: 10px;
+  position: relative;
+  width: 50%;
+  height: auto;
+  background-color: #00aabb;
+}
+
+.round{
+  -webkit-border-radius: .4em;
+     -moz-border-radius: .4em;
+          border-radius: .4em;
+}
+
+.talk-bubble.own:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 0.625em solid transparent;
+  border-left-color: #00aabb;
+  border-right: 0;
+  margin-top: -0.625em;
+  margin-right: -0.625em;
+}
+
+.talk-bubble.friend:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 0.625em solid transparent;
+  border-right-color: #00aabb;
+  border-left: 0;
+  margin-top: -0.625em;
+  margin-left: -0.625em;
+}
+
+.talk-text {
+  padding: .5em;
+  text-align: left;
+  line-height: 1.5em;
 }
 
 textarea {

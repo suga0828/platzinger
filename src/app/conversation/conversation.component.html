@@ -20,8 +20,34 @@
          <h2 class="name">{{ friend.nick }} ({{friend.status}})</h2>
          {{ friend.subnick || 'No subnick' }}
          <hr />
-         <div class="conversation">Container de conversación</div>
-         <hr />
+         <div class="conversation round">
+          <!-- <span class="speech-bubble-friend">Hola</span>
+          <span class="speech-bubble-own">Hola</span>
+          <span class="speech-bubble-friend">¿Cómo estás?</span>
+          <span class="speech-bubble-own">Bien, ¿y tú?</span> -->
+
+          <div class="talk-bubble round friend">
+            <div class="talk-text">
+              <span class="align-middle">Lorem ipsum.</span>
+            </div>
+          </div>
+          <div class="talk-bubble round own">
+            <div class="talk-text">
+              <span class="align-middle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, impedit.</span>
+            </div>
+          </div>
+          <div class="talk-bubble round own">
+            <div class="talk-text">
+              <span class="align-middle">Lorem ipsum dolor sit amet.</span>
+            </div>
+          </div>
+          <div class="talk-bubble round friend">
+            <div class="talk-text">
+              <span class="align-middle">Lorem ipsum dolor sit amet.</span>
+            </div>
+          </div>
+        </div>
+        <hr />
       </div>
     </div>
     <div class="row">
