@@ -18,7 +18,7 @@
 				<div class="borderedContainer">
 					<input [(ngModel)]="email" type="email" placeholder="Ingrese email" class="form-control mb-3">
 					<input [(ngModel)]="password" type="password" placeholder="Ingrese contraseña" class="form-control mb-3">
-					<input *ngIf="operation == 'register'" type="text" placeholder="Ingrese nick" class="form-control mb-3">
+					<input [(ngModel)]="nick" *ngIf="operation == 'register'" type="text" placeholder="Ingrese nick" class="form-control mb-3">
 				</div>
 				<div class="text-center mt-3">
 					<a (click)="login()" *ngIf="operation == 'login'" class="btn btn-primary">Iniciar sesión</a>

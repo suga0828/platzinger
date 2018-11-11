@@ -27,7 +27,7 @@
       </div>
     </div>
     <hr />
-    <p><b>Amigos: ({{friends.length}} / {{friends.length}})</b></p>
+    <p *ngIf="friends"><b>Amigos: ({{friends.length}} / {{friends.length}})</b></p>
     <p *ngFor="let user of friends | search: query; let i = index" class="user">
       <img src="assets/img/logo_live_{{ user.status }}.png" alt="Contact status" class="icon">
       <span routerLink="/conversation/{{ user.uid }}">
