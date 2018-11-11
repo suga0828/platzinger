@@ -8,9 +8,12 @@
 
 }
 
-
 .link {
 	font-weight: bold;
 	color: blue !important;
 	cursor: pointer;
+}
+
+.facebook {
+  margin-left: 15px;
 }
