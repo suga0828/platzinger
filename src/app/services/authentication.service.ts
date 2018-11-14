@@ -24,7 +24,7 @@ export class AuthenticationService {
   }
 
   getStatus() {
-    return this.angularFireAuth.auth.onAuthStateChanged;
+    return this.angularFireAuth.user;
   }
 
   logOut() {
