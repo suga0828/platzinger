@@ -3,7 +3,7 @@
 		<div class="row" *ngIf="user">
 			<div class="col-md-auto">
 					<div class="avatarFrameOnLine">
-						<img src="assets/img/generic_avatar.png" alt="" id="homeAvatarPicture">
+						<img [src]=" user.avatar || 'assets/img/generic_avatar.png' " alt="" id="homeAvatarPicture">
 					</div>
 			</div>
 			<div class="col">
