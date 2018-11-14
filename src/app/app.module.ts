@@ -22,6 +22,13 @@ import { faCalendar, faImages } from '@fortawesome/free-regular-svg-icons';
 // Add an icon to the library for convenient access in other components
 library.add(faCoffee, faTwitter, faCalendar, faImages);
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +43,12 @@ library.add(faCoffee, faTwitter, faCalendar, faImages);
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    AngularFireModule.initializeApp(environment.firebase, 'suga0828-Platzinger'),
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
+    AngularFireStorageModule, // imports firebase/storage only needed for storage features
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
