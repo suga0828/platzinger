@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
+  user: User;
 	friends: User[]
 	query: string = ''
 
@@ -23,6 +24,21 @@ export class HomeComponent implements OnInit {
     private router: Router) {}
 
 	ngOnInit() {
+    this.authenticationService.getStatus()
+      .subscribe(
+        status => {
+          this.userService.getUserById(status.uid)
+            .valueChanges()
+            .subscribe(
+              (data: User) => {
+                console.log(data)
+                this.user = data
+              },
+              error => console.log(error)
+            )
+        },
+        error => console.log(error)
+      )
 		this.userService.getUsers()
       .valueChanges()
       .subscribe( (data: User[]) => {
