@@ -23,10 +23,10 @@
   background-image: url(/assets/img/chat-bg.jpg);
   filter:brightness(0.9);
   background-size: 40%;
-  background-repeat: repeat-x;
-  min-height: 230px;
+  background-repeat: repeat;
+  height: 230px;
   padding: 10px 20px;
-  overflow: hidden
+  overflow: auto;
 }
 
 .friend,
