@@ -31,6 +31,11 @@ import { environment } from '../environments/environment';
 
 import { ImageCropperModule } from 'ngx-image-cropper';
 
+import {NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
+import { BootstrapModalModule } from 'ng2-bootstrap-modal';
+
+import { RequestComponent } from './modals/request/request.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +44,8 @@ import { ImageCropperModule } from 'ngx-image-cropper';
     ConversationComponent,
     ProfileComponent,
     MenuComponent,
-    SearchPipe
+    SearchPipe,
+    RequestComponent
   ],
   imports: [
     BrowserModule,
@@ -51,9 +57,13 @@ import { ImageCropperModule } from 'ngx-image-cropper';
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule, // imports firebase/storage only needed for storage features
     AngularFireDatabaseModule,
-    ImageCropperModule
+    ImageCropperModule,
+
+    NgbModalModule,
+    BootstrapModalModule.forRoot({container: document.body})
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [RequestComponent]
 })
 export class AppModule { }

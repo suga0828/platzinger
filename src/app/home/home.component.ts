@@ -7,6 +7,9 @@ import { AuthenticationService } from '../services/authentication.service';
 
 import { Router } from '@angular/router';
 
+import { RequestsService } from '../services/requests.service';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -15,13 +18,16 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   user: User;
-	friends: User[]
-	query: string = ''
+	friends: User[];
+	query: string = '';
+  friendEmail: string = '';
 
 	constructor(
     private userService: UserService,
     private authenticationService: AuthenticationService,
-    private router: Router) {}
+    private router: Router,
+    private modalService: NgbModal,
+    private requestsService: RequestsService) {}
 
 	ngOnInit() {
     this.authenticationService.getStatus()
@@ -57,6 +63,28 @@ export class HomeComponent implements OnInit {
         this.router.navigate(['login'])
       })
       .catch( error => console.log(error) )
+  }
+
+  open(content) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result
+      .then( (result) => {}, (reason) => {});
+  }
+
+  sendRequest() {
+    const request = {
+      timestamp: Date.now(),
+      receiver_email: this.friendEmail,
+      sender: this.user.uid,
+      status: 'pending'
+    }
+    this.requestsService.createRequest(request)
+      .then( () => {
+        alert('Solicitud enviada')
+      })
+      .catch( (error) => {
+        alert('Hubo un error')
+        console.log(error)
+      })
   }
 
 }
