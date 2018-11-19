@@ -8,9 +8,9 @@
 	</ul>
 </nav> -->
 
-<div id="conversationContainer">
+<div id="conversationContainer" [ngClass]="{'shaker': shake}">
   <div class="container pt-45">
-    <div class="row">
+    <div class="row" *ngIf="friend">
       <div class="col-md-2">
         <div class="avatarFrameOnLine img-friend">
           <img src="assets/img/logo_live_{{ friend.status }}.png" alt="Contact status" class="img-fluid">
@@ -26,7 +26,7 @@
           <span class="speech-bubble-friend">¿Cómo estás?</span>
           <span class="speech-bubble-own">Bien, ¿y tú?</span> -->
 
-          <div class="talk-bubble round friend">
+          <!-- <div class="talk-bubble round friend">
             <div class="talk-text">
               <span class="align-middle">Lorem ipsum.</span>
             </div>
@@ -45,15 +45,29 @@
             <div class="talk-text">
               <span class="align-middle">Lorem ipsum dolor sit amet.</span>
             </div>
+          </div> -->
+
+          <div *ngFor="let message of conversation" class="talk-bubble round" [ngClass]="{'friend': message.receiver === user.uid, 'own': message.receiver === friend.uid}">
+            <div class="talk-text">
+              <span class="align-middle" *ngIf=" message.type == 'text' ">{{message.text}}</span>
+              <ng-container *ngIf=" message.type == 'zumbido' ">
+                <span class="align-middle" *ngIf="message.receiver === friend.uid">
+                  Has enviado un zumbido.
+                </span>
+                <span class="align-middle" *ngIf="message.receiver === user.uid">
+                  Has recibido un zumbido.
+                </span>
+              </ng-container>
+            </div>
           </div>
         </div>
         <hr />
       </div>
     </div>
-    <div class="row">
+    <div class="row" *ngIf="user">
       <div class="col-md-2">
         <div class="avatarFrameOnLine img-me">
-          <img src="assets/img/logo_live_{{ friend.status }}.png" alt="Contact status" class="img-fluid">
+          <img src="assets/img/logo_live_{{ user.status }}.png" alt="Contact status" class="img-fluid">
         </div>
       </div>
       <div class="col-md-10">
@@ -73,7 +87,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link">
+                  <a class="nav-link" (click)="sendZumbido()">
                     <img src="assets/img/zumbido.png" alt="emoji" class="zumbido">
                   </a>
                 </li>
