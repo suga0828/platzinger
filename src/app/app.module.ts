@@ -32,6 +32,9 @@ import { environment } from '../environments/environment';
 import { ImageCropperModule } from 'ngx-image-cropper';
 
 import {NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
+import { BootstrapModalModule } from 'ng2-bootstrap-modal';
+
+import { RequestComponent } from './modals/request/request.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,8 @@ import {NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
     ConversationComponent,
     ProfileComponent,
     MenuComponent,
-    SearchPipe
+    SearchPipe,
+    RequestComponent
   ],
   imports: [
     BrowserModule,
@@ -55,9 +59,11 @@ import {NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
     AngularFireDatabaseModule,
     ImageCropperModule,
 
-    NgbModalModule
+    NgbModalModule,
+    BootstrapModalModule.forRoot({container: document.body})
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [RequestComponent]
 })
 export class AppModule { }
