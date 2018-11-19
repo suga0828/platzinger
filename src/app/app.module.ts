@@ -31,6 +31,8 @@ import { environment } from '../environments/environment';
 
 import { ImageCropperModule } from 'ngx-image-cropper';
 
+import {NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +53,9 @@ import { ImageCropperModule } from 'ngx-image-cropper';
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule, // imports firebase/storage only needed for storage features
     AngularFireDatabaseModule,
-    ImageCropperModule
+    ImageCropperModule,
+
+    NgbModalModule
   ],
   providers: [],
   bootstrap: [AppComponent]
