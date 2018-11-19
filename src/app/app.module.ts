@@ -35,6 +35,7 @@ import {NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
 import { BootstrapModalModule } from 'ng2-bootstrap-modal';
 
 import { RequestComponent } from './modals/request/request.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { RequestComponent } from './modals/request/request.component';
     ProfileComponent,
     MenuComponent,
     SearchPipe,
-    RequestComponent
+    RequestComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
