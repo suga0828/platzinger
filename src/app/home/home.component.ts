@@ -37,8 +37,11 @@ export class HomeComponent implements OnInit {
             .valueChanges()
             .subscribe(
               (data: User) => {
-                console.log(data)
                 this.user = data
+                if (this.user.friends) {
+                  this.user.friends = Object.values(this.user.friends)
+                  console.log(this.user)
+                }
               },
               error => console.log(error)
             )
